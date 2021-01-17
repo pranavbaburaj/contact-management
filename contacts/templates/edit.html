@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ data.name }}</title>
+</head>
+<body>
+    <form action="/edit/{{ data.unique_id }}/" method="post">
+        <h1>Edit {{ data.name }}</h1>
+        {% csrf_token %}
+        <br>
+        <input type="text" value="{{ data.name }}" name="name" placeholder="name" required>
+        <br>
+        <input type="text" value="{{ data.relationship }}" name="rel" placeholder="relation" required>
+        <br>
+        <input type="text" value="{{ data.mobile }}" name="num" placeholder="mobile" required>
+        <br>
+        <button type="submit">Edit</button>
+    </form>
+</body>
+</html>

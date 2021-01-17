@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a new Contact</title>
+</head>
+<body>
+    <form style="display: grid; place-items:center;" action="/add/" method="POST">
+        {% csrf_token %}
+        <br>
+    <h1 class="display-6">Create new contact</h1>
+    <br>    
+    <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input name="name" style="width:100%;" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+        </div>
+        <br>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Relationship</label>
+          <input name="rel" style="width:100%;"type="text" class="form-control" id="exampleInputPassword1" required>
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Phone number</label>
+            <input name="num" style="width:100%;" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+          </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</body>
+</html>

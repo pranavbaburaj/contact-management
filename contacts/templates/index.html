@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" style="color: white;">Contacts</a>
+              <a href="/n/"><button class="btn btn-success" type="submit">New</button></a>
+          </div>
+        </div>
+      </nav>
+      <ul class="list-group">
+        {% if data %}
+          {% for x in data %}
+          <a href="/c/{{ x.unique_id }}" style="text-decoration: none; color:black;">
+            <div class="card-body">
+              <h5 class="card-title">{{ x.name }}</h5>
+              <p class="card-text">{{ x.mobile }}</p>
+              <a href="/e/{{ x.unique_id }}" class="btn btn-primary">Edit</a>
+            </div>
+          </a>
+          <hr>
+          {% endfor %}
+        {% endif %}
+      </ul>
 </body>
 </html>
